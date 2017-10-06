@@ -39,8 +39,8 @@ p{
   width:35px;
   height:30px;
   padding-top:10px;
-  background: white;
+  background: red;
   text-align: center;
-  color: red;
+  color: white;
   cursor:pointer;
-  border: solid 1px $white;
+  border: solid 1px white;
