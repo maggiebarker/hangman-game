@@ -14,12 +14,33 @@ header {
 }
 
 .page-wrapper{
-	width: 100%;
+	width: 90%;
 	margin: 0 auto;	
 }
 
-p {
+p{
 	font-size: 22px;
 	font-family: 'Roboto Slab', serif;
 	color: white;
 }
+
+#alphabet {
+  clear: auto;
+  margin:15px auto;
+  padding:0;
+  max-width:900px;
+  font-size: 18px;
+}
+
+#alphabet li {
+  float:left;
+  margin: 0 10px 10px 0;
+  list-style:none;
+  width:35px;
+  height:30px;
+  padding-top:10px;
+  background: white;
+  text-align: center;
+  color: red;
+  cursor:pointer;
+  border: solid 1px $white;
