@@ -44,3 +44,40 @@ p{
   color: white;
   cursor:pointer;
   border: solid 1px white;
+}
+
+#buttons {
+	width: 650px;
+	height: 150px;
+	margin: 0 auto;
+}
+
+#hold {
+	width: 650px;
+	padding: 20px;
+	border: 1px solid white;
+	margin: 0 auto;
+	text-align: center;
+	color: red;
+	
+}
+
+#hold li {
+	display: inline;
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.footer {
+	position: fixed;
+	width: 100%;
+	margin-top: 20px;
+	padding: 20px;
+	border-top: 1px solid white;
+	text-align: center;
+	}
+
+.footer p{
+	font-size: 14px;
+	font-color: white;
+}

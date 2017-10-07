@@ -5,16 +5,31 @@ window.onload = function () {
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
         't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-  var categories = ["actors", "movies", "genres"];
+  var categories ;        		// Array of topics
+  var chosenCategory;     		// Selected category
+  var word ;              		// Selected word
+  var userGuess ;             	// Guess
+  var pastGuesses = [ ];      	// Stored guesses
+  var tries ;             		// Tries
+  var counter ;           		// Count correct guesses
+  var space;              		// Number of spaces in word '-'
 
-  //var actors = ["audrey hepburn", "marilyn monroe", "morgan freeman", "anthony hopkins", "meryl streep", "keanu reeves", "lupita nyong'o", "chiwetel ejiofor"];
-  //var movies = ["jurrassic park", "clue", "raiders of the lost ark", "great mouse detective", "imitation game", "tombstone"];
-  //var genre =  ["disney", "western", "horror", "comedy", "action", "independent", "foreign", "drama"];
+// 	var categories = {
+//		actors: ["audrey hepburn", "marilyn monroe", "morgan freeman", "anthony hopkins", "meryl streep", "keanu reeves", "lupita nyong'o", "chiwetel ejiofor"]
+ // 	movies: ["jurrassic park", "clue", "raiders of the lost ark", "great mouse detective", "imitation game", "tombstone"];
+  //	genres:  ["disney", "western", "horror", "comedy", "action", "independent", "foreign", "drama"];
+	//}
+
+//Get elements
+
+  var showTries = document.getElementById("mytries");
+  var showCategory = document.getElementById("categoryName");
 
 //Create alphabet list
-	var buttons =function () {
+	var buttons = function () {
 		myButtons = document.getElementById('buttons');
 		letters = document.createElement('ul');
+        
 
 	for (var i = 0; i < alphabet.length; i++) {
 		letters.id = 'alphabet';
@@ -26,11 +41,6 @@ window.onload = function () {
 		letters.appendChild(list);
 		}
 	}
-
-//Get elements
-
-  var showTries = document.getElementById("tries");
-  var showCategory = document.getElementById("category");
 
 //Select category
 
@@ -57,7 +67,7 @@ window.onload = function () {
         guess.innerHTML = "-";
         space = 1;
       } else {
-        guess.innerHTML = "_";
+        guess.innerHTML = " _";
       }
 
       guesses.push(guess);
@@ -67,13 +77,77 @@ window.onload = function () {
   }
 
 //Show tries
+   comments = function () {
+    showTries.innerHTML = "You have " + tries + " attempts remaining";
+    if (tries < 1) {
+      showTries.innerHTML = "Game Over";
+    }
+    for (var i = 0; i < guesses.length; i++) {
+      if (counter + space === guesses.length) {
+        showLives.innerHTML = "You Win!";
+      }
+    }
+  }
 
 //Functions (.onclick)
 
+   check = function () {
+    list.onclick = function () {
+      var guess = (this.innerHTML);
+      this.setAttribute("class", "active");
+      this.onclick = null;
+      for (var i = 0; i < word.length; i++) {
+        if (word[i] === guess) {
+          guesses[i].innerHTML = guess;
+          counter += 1;
+        } 
+      }
+      var j = (word.indexOf(guess));
+      if (j === -1) {
+        tries -= 1;
+        comments();
+        animate();
+      } else {
+        comments();
+      }
+    }
+  }
+
 //Play and counter
+
+ play = function () {
+    categories = [
+		 ["audrey hepburn", "marilyn monroe", "morgan freeman", "anthony hopkins", "meryl streep", "keanu reeves", "lupita nyong'o", "chiwetel ejiofor"],
+		 ["jurrassic park", "clue", "raiders of the lost ark", "great mouse detective", "imitation game", "tombstone"],
+		 ["disney", "western", "horror", "comedy", "action", "independent", "foreign", "drama"]
+    ];
+
+    chosenCategory = categories[Math.floor(Math.random() * categories.length)];
+    word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
+    word = word.replace(/\s/g, "-");
+    console.log(word);
+    buttons();
+
+    guesses = [ ];
+    tries = 12;
+    counter = 0;
+    space = 0;
+    result();
+    comments();
+    selectCat();
+  }
+
+  play();
 
 //Make gif appear at W/L
 
 //Reset
 
-}
+  document.getElementById('reset').onclick = function() {
+    correct.parentNode.removeChild(correct);
+    letters.parentNode.removeChild(letters);
+    context.clearRect(0, 0, 400, 400);
+    play();
+  }
+
+};
