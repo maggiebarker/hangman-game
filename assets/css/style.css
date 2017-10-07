@@ -48,7 +48,7 @@ p{
 
 #buttons {
 	width: 650px;
-	height: 150px;
+	height: 120px;
 	margin: 0 auto;
 }
 
@@ -71,7 +71,8 @@ p{
 
 #hold {
 	width: 750px;
-	padding: 20px;
+	padding: 10px;
+	margin-top: 10px;
 	border: 1px solid white;
 	margin: 0 auto;
 	text-align: center;
@@ -86,7 +87,7 @@ p{
 }
 
 #mytries {
-	margin-top: 30px;
+	margin-top: 120px;
 	text-align: center;
 }
 
