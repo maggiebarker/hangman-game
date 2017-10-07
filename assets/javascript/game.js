@@ -1,9 +1,10 @@
 window.onload = function () {
 
 //Array of possible guesses
-  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-        't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+        'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
+        'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
 
   var categories ;        		// Array of topics
   var chosenCategory;     		// Selected category
@@ -46,11 +47,11 @@ window.onload = function () {
 
   var selectCat = function () {
     if (chosenCategory === categories[0]) {
-      categoryName.innerHTML = "The Category Is Actors";
+      categoryName.innerHTML = "Category: Actors";
     } else if (chosenCategory === categories[1]) {
-      categoryName.innerHTML = "The Category Is Movies";
+      categoryName.innerHTML = "Category: Films";
     } else if (chosenCategory === categories[2]) {
-      categoryName.innerHTML = "The Category Is Genres";
+      categoryName.innerHTML = "Category: Genres";
     }
   }
 
@@ -64,15 +65,16 @@ window.onload = function () {
       guess = document.createElement('li');
       guess.setAttribute('class', 'guess');
       if (word[i] === "-") {
-        guess.innerHTML = "-";
+        guess.innerHTML = " - ";
         space = 1;
       } else {
-        guess.innerHTML = " _";
+        guess.innerHTML = " _ ";
       }
 
       guesses.push(guess);
       wordHolder.appendChild(correct);
       correct.appendChild(guess);
+
     }
   }
 
@@ -117,9 +119,9 @@ window.onload = function () {
 
  play = function () {
     categories = [
-		 ["audrey hepburn", "marilyn monroe", "morgan freeman", "anthony hopkins", "meryl streep", "keanu reeves", "lupita nyongo", "chiwetel ejiofor"],
-		 ["jurrassic park", "clue", "raiders of the lost ark", "great mouse detective", "imitation game", "tombstone"],
-		 ["disney", "western", "horror", "comedy", "action", "independent", "foreign", "drama"]
+		 ["AUDREY HEPBURN", "MARYILYN MONROE", "MORGAN FREEMAN", "ANTHONY HOPKINS", "MERYL STREEP", "KEANU REEVES", "LUPITA NYONGO", "CHIWETEL EJIOFOR"],
+		 ["JURASSIC PARK", "CLUE", "RAIDERS OF THE LOST ARK", "GREAT MOUSE DETECTIVE", "IMITATION GAME", "TOMBSTONE", "CASABLANCA", "SHAWSHANK REDEMPTION"],
+		 ["DISNEY", "WESTERN", "HORROR", "COMEDY", "ACTION", "INDEPENDENT", "FOREIGN", "DRAMA"]
     ];
 
     chosenCategory = categories[Math.floor(Math.random() * categories.length)];
@@ -129,7 +131,7 @@ window.onload = function () {
     buttons();
 
     guesses = [ ];
-    tries = 12;
+    tries = 8;
     counter = 0;
     space = 0;
     result();
@@ -143,8 +145,20 @@ window.onload = function () {
 
 //Reset
 
-  document.getElementById('reset').onclick 
+ document.getElementById("reset").onclick = function() {
+    location.reload();
+}
+
+//  document.getElementById('reset').onclick = function() {
+//	correct.parentNode.removeChild(correct);
+//    tries.parentNode.removeChild(tries);
+//    play();
+// }
 
 };
 
-//document.getElementById("restart").onclick = setup;
+//Things to still do:
+// Make the buttons change colors once they've been pressed
+// Style and get the reset to work -- got it to refresh, but I'm thinking that's not what we wanted
+// change all the letters and inputs to upperCase -- ok to hard code this because it's a click event, not a key-up
+// make an image appear on a win/loss?

@@ -58,11 +58,11 @@ p{
     color:white;
     }
 
-#letter:visited{
+/*#letter:visited{
 	background: white;
     border: solid 1px black;
     color:red;
-}
+} */
 
 
 #categoryName {
@@ -70,7 +70,7 @@ p{
 }
 
 #hold {
-	width: 650px;
+	width: 750px;
 	padding: 20px;
 	border: 1px solid white;
 	margin: 0 auto;
@@ -106,6 +106,17 @@ img #lose-img{
 	visibility: hidden;
 }
 */
+
+.container #reset{
+	font-size: 24px;
+	padding: 10px 36px;
+	margin: 0 auto;
+	border: 1px solid white;
+	background-color: red;
+	font-family:'Rye', cursive ;
+	color: white;
+
+}
 
 .footer {
 	position: relative;
