@@ -115,11 +115,13 @@ window.onload = function () {
     }
   }
 
+// when game starts, letterClick = false, after guesses, letterClick = true, if true, hide the letter 
+
 //Play and counter
 
  play = function () {
     categories = [
-		 ["AUDREY HEPBURN", "MARYILYN MONROE", "JAMES STEWART", "FRED ASTAIRE", "JUDY GARLAND", "DEBBIE REYNOLDS", "HUMPHREY BOGART", "ERROL FLYNN"],
+		 ["AUDREY HEPBURN", "MARILYN MONROE", "JAMES STEWART", "FRED ASTAIRE", "JUDY GARLAND", "DEBBIE REYNOLDS", "HUMPHREY BOGART", "ERROL FLYNN"],
 		 ["A WONDERFUL LIFE", "PHILADELPHIA STORY", "SINGIN IN THE RAIN", "GONE WITH THE WIND", "SOME LIKE IT HOT", "REAR WINDOW", "CASABLANCA", "STAGECOACH"],
 		 ["THRILLER", "WESTERN", "SILENT", "COMEDY", "ACTION", "INDEPENDENT", "FOREIGN", "DRAMA"]
     ];
