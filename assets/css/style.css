@@ -52,6 +52,10 @@ p{
 	margin: 0 auto;
 }
 
+#categoryName {
+	text-align: center;
+}
+
 #hold {
 	width: 650px;
 	padding: 20px;
@@ -66,10 +70,30 @@ p{
 	display: inline;
 	font-size: 40px;
 	font-weight: bold;
+
+}
+
+#mytries {
+	margin-top: 30px;
+	text-align: center;
+}
+
+#reaction {
+	width: 800px;
+	height: 300px;
+	margin: 0 auto;
+}
+
+.win-img{
+	display: none;
+}
+
+img #lose-img{
+	visibility: hidden;
 }
 
 .footer {
-	position: fixed;
+	position: relative;
 	width: 100%;
 	margin-top: 20px;
 	padding: 20px;

@@ -80,11 +80,11 @@ window.onload = function () {
    comments = function () {
     showTries.innerHTML = "You have " + tries + " attempts remaining";
     if (tries < 1) {
-      showTries.innerHTML = "Game Over";
+      showTries.innerHTML = "Two thumbs way way down!";
     }
     for (var i = 0; i < guesses.length; i++) {
       if (counter + space === guesses.length) {
-        showLives.innerHTML = "You Win!";
+        showTries.innerHTML = "And the Academy Award goes to you!";
       }
     }
   }
@@ -117,7 +117,7 @@ window.onload = function () {
 
  play = function () {
     categories = [
-		 ["audrey hepburn", "marilyn monroe", "morgan freeman", "anthony hopkins", "meryl streep", "keanu reeves", "lupita nyong'o", "chiwetel ejiofor"],
+		 ["audrey hepburn", "marilyn monroe", "morgan freeman", "anthony hopkins", "meryl streep", "keanu reeves", "lupita nyongo", "chiwetel ejiofor"],
 		 ["jurrassic park", "clue", "raiders of the lost ark", "great mouse detective", "imitation game", "tombstone"],
 		 ["disney", "western", "horror", "comedy", "action", "independent", "foreign", "drama"]
     ];
@@ -143,11 +143,8 @@ window.onload = function () {
 
 //Reset
 
-  document.getElementById('reset').onclick = function() {
-    correct.parentNode.removeChild(correct);
-    letters.parentNode.removeChild(letters);
-    context.clearRect(0, 0, 400, 400);
-    play();
-  }
+  document.getElementById('reset').onclick 
 
 };
+
+//document.getElementById("restart").onclick = setup;
