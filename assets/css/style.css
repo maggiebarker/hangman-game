@@ -52,6 +52,19 @@ p{
 	margin: 0 auto;
 }
 
+#letter:hover{
+    background: black;
+    border: solid 1px red;
+    color:white;
+    }
+
+#letter:visited{
+	background: white;
+    border: solid 1px black;
+    color:red;
+}
+
+
 #categoryName {
 	text-align: center;
 }
@@ -70,7 +83,6 @@ p{
 	display: inline;
 	font-size: 40px;
 	font-weight: bold;
-
 }
 
 #mytries {
@@ -78,11 +90,13 @@ p{
 	text-align: center;
 }
 
-#reaction {
+
+/* #reaction {
 	width: 800px;
 	height: 300px;
 	margin: 0 auto;
 }
+
 
 .win-img{
 	display: none;
@@ -91,6 +105,7 @@ p{
 img #lose-img{
 	visibility: hidden;
 }
+*/
 
 .footer {
 	position: relative;
