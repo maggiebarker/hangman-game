@@ -6,7 +6,7 @@ header {
 	width: 100%;
 	height: 40px;
 	padding: 20px;
-	border-bottom: 2px solid red;
+	border-bottom: 2px solid #e52929;
 	text-align: center;
 	font-size: 48px;
 	font-family: 'Rye', cursive;
@@ -39,7 +39,7 @@ p{
   width:35px;
   height:30px;
   padding-top:10px;
-  background: red;
+  background: #e52929;
   text-align: center;
   color: white;
   cursor:pointer;
@@ -50,19 +50,27 @@ p{
 	width: 650px;
 	height: 120px;
 	margin: 0 auto;
+	font-weight: bold;
 }
+
+/*#letter:visited{
+	display: none;
+} */
+
+#letter.active{
+	color: black;
+	background-color: white;
+	border: 1px solid #e52929;
+
+}
+
 
 #letter:hover{
     background: black;
-    border: solid 1px red;
+    border: solid 1px #e52929;
     color:white;
     }
 
-/*#letter:visited{
-	background: white;
-    border: solid 1px black;
-    color:red;
-} */
 
 
 #categoryName {
@@ -76,7 +84,7 @@ p{
 	border: 1px solid white;
 	margin: 0 auto;
 	text-align: center;
-	color: red;
+	color: #e52929;
 	
 }
 
@@ -113,7 +121,7 @@ img #lose-img{
 	padding: 10px 36px;
 	margin: 0 auto;
 	border: 1px solid white;
-	background-color: red;
+	background-color: #e52929;
 	font-family:'Rye', cursive ;
 	color: white;
 

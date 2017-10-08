@@ -15,16 +15,12 @@ window.onload = function () {
   var counter ;           		// Count correct guesses
   var space;              		// Number of spaces in word '-'
 
-// 	var categories = {
-//		actors: ["audrey hepburn", "marilyn monroe", "morgan freeman", "anthony hopkins", "meryl streep", "keanu reeves", "lupita nyong'o", "chiwetel ejiofor"]
- // 	movies: ["jurrassic park", "clue", "raiders of the lost ark", "great mouse detective", "imitation game", "tombstone"];
-  //	genres:  ["disney", "western", "horror", "comedy", "action", "independent", "foreign", "drama"];
-	//}
 
 //Get elements
 
   var showTries = document.getElementById("mytries");
   var showCategory = document.getElementById("categoryName");
+  var letterClick = false;
 
 //Create alphabet list
 	var buttons = function () {
@@ -65,7 +61,7 @@ window.onload = function () {
       guess = document.createElement('li');
       guess.setAttribute('class', 'guess');
       if (word[i] === "-") {
-        guess.innerHTML = " - ";
+        guess.innerHTML = "-";
         space = 1;
       } else {
         guess.innerHTML = " _ ";
@@ -87,6 +83,7 @@ window.onload = function () {
     for (var i = 0; i < guesses.length; i++) {
       if (counter + space === guesses.length) {
         showTries.innerHTML = "And the Academy Award goes to you!";
+
       }
     }
   }
@@ -102,18 +99,20 @@ window.onload = function () {
         if (word[i] === guess) {
           guesses[i].innerHTML = guess;
           counter += 1;
+          console.log(guess);  //this is only logging to the console the correct guesses, why?
         } 
       }
       var j = (word.indexOf(guess));
       if (j === -1) {
         tries -= 1;
         comments();
-        animate();
       } else {
         comments();
+       
       }
     }
-  }
+
+}
 
 // when game starts, letterClick = false, after guesses, letterClick = true, if true, hide the letter 
 
@@ -122,7 +121,7 @@ window.onload = function () {
  play = function () {
     categories = [
 		 ["AUDREY HEPBURN", "MARILYN MONROE", "JAMES STEWART", "FRED ASTAIRE", "JUDY GARLAND", "DEBBIE REYNOLDS", "HUMPHREY BOGART", "ERROL FLYNN"],
-		 ["A WONDERFUL LIFE", "PHILADELPHIA STORY", "SINGIN IN THE RAIN", "GONE WITH THE WIND", "SOME LIKE IT HOT", "REAR WINDOW", "CASABLANCA", "STAGECOACH"],
+		 ["CITIZEN KANE", "PHILADELPHIA STORY", "ROMAN HOLIDAY", "MALTESE FALCON", "AFRICAN QUEEN", "REAR WINDOW", "CASABLANCA", "STAGECOACH"],
 		 ["THRILLER", "WESTERN", "SILENT", "COMEDY", "ACTION", "INDEPENDENT", "FOREIGN", "DRAMA"]
     ];
 
@@ -160,7 +159,7 @@ window.onload = function () {
 };
 
 //Things to still do:
-// Make the buttons change colors once they've been pressed
+// Make the buttons change colors once they've been pressed.  Or just disappear.  
 // Style and get the reset to work -- got it to refresh, but I'm thinking that's not what we wanted
 // change all the letters and inputs to upperCase -- ok to hard code this because it's a click event, not a key-up
 // make an image appear on a win/loss?
