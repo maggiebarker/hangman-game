@@ -114,8 +114,6 @@ window.onload = function () {
 
 }
 
-// when game starts, letterClick = false, after guesses, letterClick = true, if true, hide the letter 
-
 //Play and counter
 
  play = function () {
@@ -142,8 +140,6 @@ window.onload = function () {
 
   play();
 
-//Make gif appear at W/L
-
 //Reset
 
  document.getElementById("reset").onclick = function() {
@@ -157,9 +153,3 @@ window.onload = function () {
 // }
 
 };
-
-//Things to still do:
-// Make the buttons change colors once they've been pressed.  Or just disappear.  
-// Style and get the reset to work -- got it to refresh, but I'm thinking that's not what we wanted
-// change all the letters and inputs to upperCase -- ok to hard code this because it's a click event, not a key-up
-// make an image appear on a win/loss?

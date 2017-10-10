@@ -72,7 +72,6 @@ p{
     }
 
 
-
 #categoryName {
 	text-align: center;
 }
@@ -99,23 +98,6 @@ p{
 	text-align: center;
 }
 
-
-/* #reaction {
-	width: 800px;
-	height: 300px;
-	margin: 0 auto;
-}
-
-
-.win-img{
-	display: none;
-}
-
-img #lose-img{
-	visibility: hidden;
-}
-*/
-
 .container #reset{
 	font-size: 24px;
 	padding: 10px 36px;
@@ -127,16 +109,21 @@ img #lose-img{
 
 }
 
-footer {
-	position: relative;
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
 	width: 100%;
 	margin-top: 20px;
 	padding: 20px;
-	text-align: center;
+	text-align: center
+	color: white;
+	font-size: 12px;
 }
 
 footer p{
 	font-size: 12px;
 	font-color: white;
+	text-align: center;
 	}
 }
